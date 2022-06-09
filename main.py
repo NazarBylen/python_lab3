@@ -9,7 +9,7 @@ def zipper():
 
 
 def main():
-    # zipper()
+    #zipper()
     txt = open('access.log.txt')
     # print(txt.read())
     check = re.findall('.*?\[((0[7]\/Mar\/2009:((1[2]:((3[4]:2[6-9])|(3[5-9]:\d{2})))|(1[3-9]|2[0-4]):\d{2}:\d{2}))|'
