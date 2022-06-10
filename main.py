@@ -1,7 +1,6 @@
 import re
 from zipfile import ZipFile
 
-
 def zipper():
     with ZipFile('access.log.zip', 'r') as zip:
         zip.extract('access.log.txt')
@@ -10,9 +9,7 @@ def zipper():
 
 def main():
     #zipper()
-    filtered_urls=[]
-    txt = open('access.log.txt')
-    # print(txt.read())
+    filtered_urls = []
     regex = re.compile('.*?\[((0[7]\/Mar\/2009:((1[2]:((3[4]:2[6-9])|(3[5-9]:\d{2})))|(1[3-9]|2[0-4]):\d{2}:\d{2}))|'
             '(0[8]\/Mar\/2009:((([0-1][0-9]|2[0-2]):\d{2}:\d{2})|((2[3]:[0-3][0-3]:\d{2})|(2[3]:3[4]:(0[1-9]|1[0-1]))))))'
             '.*GET.*?([T][W]iki).*?"\s200')
@@ -23,7 +20,6 @@ def main():
                 #print(line)
                 filtered_urls.append(line)
 
-    txt.close()
 
     for i in filtered_urls:
         print(i)
